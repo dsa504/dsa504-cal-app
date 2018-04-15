@@ -1,8 +1,17 @@
+const blk = "#222";
+const red = "#ec1f27";
+
 const styles = {
   root: {
     paddingTop: 20,
     paddingBottom: 10,
     fontSize: 16
+  },
+  link: {
+    color: blk,
+    "&:hover, &:focus": {
+      color: red
+    }
   },
   name: {
     margin: 0,
@@ -12,7 +21,7 @@ const styles = {
     lineHeight: ({ fullScreen }) => (fullScreen ? "24px" : "18px")
   },
   nameLink: {
-    color: "#000"
+    composes: "$link"
   },
   description: {
     margin: 0,
@@ -22,7 +31,7 @@ const styles = {
   date: {
     fontSize: ({ fullScreen }) => (fullScreen ? 22 : 16),
     lineHeight: ({ fullScreen }) => (fullScreen ? "24px" : "18px"),
-    color: "#ec1f27",
+    color: red,
     float: ({ fullScreen }) => (fullScreen ? "left" : "none")
   },
   timespan: {
@@ -32,6 +41,9 @@ const styles = {
   },
   location: {
     fontStyle: "italic"
+  },
+  locationLink: {
+    composes: "$link"
   }
 };
 

@@ -31,7 +31,12 @@ const Event = ({
           {summary}
         </h4>
       </a>
-      <div className={classes.location}>{location}</div>
+      <a
+        className={classes.locationLink}
+        href={`https://google.com/maps/search/${encodeURIComponent(location)}`}
+      >
+        <div className={classes.location}>{location}</div>
+      </a>
       <p
         itemProp="description"
         className={classes.description}
