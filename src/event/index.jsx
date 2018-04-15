@@ -4,7 +4,15 @@ import EventJsonLd from "./event-json-ld";
 import injectSheet from "react-jss";
 import styles from "./styles";
 
-const Event = ({ summary, description, location, start, end, classes }) => {
+const Event = ({
+  summary,
+  description,
+  location,
+  start,
+  end,
+  classes,
+  htmlLink
+}) => {
   return (
     <div className={classes.root} itemScope itemType="http://schema.org/Event">
       <EventJsonLd {...{ summary, description, start, end, location }} />
@@ -18,9 +26,11 @@ const Event = ({ summary, description, location, start, end, classes }) => {
           {format(start.dateTime, "h:mm A")} - {format(end.dateTime, "h:mm A")}
         </div>
       </div>
-      <h4 itemProp="name" className={classes.name}>
-        {summary}
-      </h4>
+      <a href={htmlLink} className={classes.nameLink}>
+        <h4 itemProp="name" className={classes.name}>
+          {summary}
+        </h4>
+      </a>
       <div className={classes.location}>{location}</div>
       <p
         itemProp="description"

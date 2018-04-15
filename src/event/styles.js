@@ -11,6 +11,9 @@ const styles = {
     fontSize: ({ fullScreen }) => (fullScreen ? 24 : 18),
     lineHeight: ({ fullScreen }) => (fullScreen ? "24px" : "18px")
   },
+  nameLink: {
+    color: "#000"
+  },
   description: {
     margin: 0,
     padding: 0,
