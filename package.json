@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "dependencies": {
     "date-fns": "1.29.0",
-    "query-string": "6.0.0",
+    "query-string": "5.x",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-jss": "8.4.0",
