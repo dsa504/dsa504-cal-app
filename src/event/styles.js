@@ -1,5 +1,5 @@
-const blk = "#222";
-const red = "#ec1f27";
+export const blk = "#222";
+export const red = "#ec1f27";
 
 const styles = {
   root: {
