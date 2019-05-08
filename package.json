@@ -10,6 +10,7 @@
     "query-string": "5.x",
     "react": "16.x",
     "react-dom": "16.x",
+    "react-flip-move": "3.0.3",
     "react-jss": "8.4.0",
     "react-scripts": "1.1.0"
   },

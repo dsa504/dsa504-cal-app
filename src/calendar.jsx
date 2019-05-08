@@ -1,12 +1,16 @@
 import React from "react";
 import Event from "./event";
 import { red } from "./event/styles";
-import { get } from "lodash";
+import { get, uniq } from "lodash";
 
 const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
   if (isError || !items) return null;
 
   const realItems = items.filter(e => e.start !== undefined);
+
+  const filterOptions = uniq(
+    realItems.map(e => get(e, "creator.email"))
+  ).sort();
 
   const filteredItems = filter
     ? realItems.filter(e => get(e, "creator.email") === filter)
@@ -17,10 +21,11 @@ const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
       <div style={{ display: "flex" }}>
         <select style={{ padding: "5px 8px" }} onChange={handleSetFilter}>
           <option value="">Filter by committee or caucus…</option>
-          <option value="hello@dsaneworleans.org">Chapter</option>
-          <option value="socfem@dsaneworleans.org">
-            Socialist Feminist Caucus
-          </option>
+          {filterOptions.map(o => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))}
         </select>
         <a
           style={{ color: red, marginLeft: "auto" }}
@@ -30,7 +35,7 @@ const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
         </a>
       </div>
       {filteredItems.map(item => (
-        <Event {...item} key={item.id} {...{ fullScreen }} />
+        <Event key={item.id} {...item} {...{ fullScreen }} />
       ))}
     </div>
   );

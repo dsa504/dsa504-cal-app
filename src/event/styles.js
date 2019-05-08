@@ -3,6 +3,7 @@ export const red = "#ec1f27";
 
 const styles = {
   root: {
+    background: "#fff",
     paddingTop: 20,
     paddingBottom: 10,
     fontSize: 16
