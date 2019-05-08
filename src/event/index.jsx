@@ -6,6 +6,7 @@ import styles from "./styles";
 
 const Event = ({
   summary,
+  creator,
   description,
   location,
   start,
@@ -30,6 +31,12 @@ const Event = ({
         <h4 itemProp="name" className={classes.name}>
           {summary}
         </h4>
+      </a>
+      <a
+        className={classes.link}
+        href={`mailto:${creator.email}?subject=${encodeURIComponent(summary)}`}
+      >
+        ✉ Contact organizer
       </a>
       <a
         className={classes.locationLink}
