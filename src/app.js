@@ -6,12 +6,19 @@ import config, { calendarId, baseUrl } from "./config";
 export default class App extends Component {
   state = {
     isError: false,
-    items: null
+    items: null,
+    filter: null
   };
 
   componentDidMount() {
     this.load();
   }
+
+  handleSetFilter = e => {
+    this.setState({
+      filter: e.target.value
+    });
+  };
 
   load = async () => {
     if (!this.props.fullScreen) {
@@ -37,6 +44,12 @@ export default class App extends Component {
   };
 
   render() {
-    return <Calendar {...this.state} {...this.props} />;
+    return (
+      <Calendar
+        {...this.state}
+        {...this.props}
+        handleSetFilter={this.handleSetFilter}
+      />
+    );
   }
 }
