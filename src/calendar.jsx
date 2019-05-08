@@ -12,8 +12,6 @@ const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
     ? realItems.filter(e => get(e, "creator.email") === filter)
     : realItems;
 
-  console.log(filter);
-
   return (
     <div>
       <div style={{ display: "flex" }}>
