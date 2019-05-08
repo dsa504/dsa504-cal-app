@@ -8,17 +8,17 @@ const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
 
   const realItems = items.filter(e => e.start !== undefined);
 
-  const filteredItems = realItems
-    ? filter
-      ? realItems.filter(e => get(e, "creator.email") === filter)
-      : realItems
-    : [];
+  const filteredItems = filter
+    ? realItems.filter(e => get(e, "creator.email") === filter)
+    : realItems;
+
+  console.log(filter);
 
   return (
     <div>
       <div style={{ display: "flex" }}>
         <select style={{ padding: "5px 8px" }} onChange={handleSetFilter}>
-          <option value={null}>Filter by committee or caucus…</option>
+          <option value="">Filter by committee or caucus…</option>
           <option value="hello@dsaneworleans.org">Chapter</option>
           <option value="socfem@dsaneworleans.org">
             Socialist Feminist Caucus
