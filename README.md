@@ -5,7 +5,7 @@ Helo.
 To hack on this thing, clone the repo, install [npm](http://npmjs.com), then from the root directory:
 
 ```
-npm && npm run start
+npm i && npm run start
 ```
 
 To build for prod,
