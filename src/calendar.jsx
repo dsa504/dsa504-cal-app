@@ -18,8 +18,8 @@ const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
 
   return (
     <div>
-      <div style={{ display: "flex" }}>
-        <select style={{ padding: "5px 8px" }} onChange={handleSetFilter}>
+      <div className="events-filter">
+        <select onChange={handleSetFilter}>
           <option value="">Filter by committee or caucus…</option>
           {filterOptions.map(o => (
             <option key={o} value={o}>
@@ -27,7 +27,7 @@ const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
             </option>
           ))}
         </select>
-        <a
+        <a 
           style={{ color: red, marginLeft: "auto" }}
           href="https://calendar.google.com/calendar/embed?src=vv0uj9uhqrl6j6m0pugu90uo6c%40group.calendar.google.com&ctz=America%2FChicago"
         >
