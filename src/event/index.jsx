@@ -14,6 +14,8 @@ const Event = ({
   classes,
   htmlLink
 }) => {
+  const emailSubject = `${format(start.dateTime, "MMMM Do")} ${summary}`;
+
   return (
     <div className={classes.root} itemScope itemType="http://schema.org/Event">
       <EventJsonLd {...{ summary, description, start, end, location }} />
@@ -34,7 +36,9 @@ const Event = ({
       </a>
       <a
         className={classes.link}
-        href={`mailto:${creator.email}?subject=${encodeURIComponent(summary)}`}
+        href={`mailto:${creator.email}?subject=${encodeURIComponent(
+          emailSubject
+        )}`}
       >
         ✉ Contact organizer
       </a>
