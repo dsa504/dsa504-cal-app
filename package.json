@@ -5,17 +5,21 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "date-fns": "1.29.0",
+    "@babel/runtime": "^7.4.4",
+    "babel-preset-react-app": "9.x",
+    "dayjs": "1.8.14",
     "lodash": "4.17.11",
     "query-string": "5.x",
     "react": "16.8.x",
     "react-dom": "16.8.x",
     "react-fetch-hooks": "1.0.3",
     "react-jss": "8.4.0",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.0.1",
+    "source-map-explorer": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/*.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
