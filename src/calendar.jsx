@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Event from "./event";
 import { red } from "./event/styles";
 import { get, uniq } from "lodash";
 
-const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
-  if (isError || !items) return null;
+const Calendar = ({
+  error,
+  isFetching,
+  items,
+  fullScreen,
+  filter,
+  setFilter
+}) => {
+  const handleSetFilter = useCallback(
+    e => {
+      setFilter(e.target.value);
+    },
+    [setFilter]
+  );
+
+  if (isFetching) return <div>Fetching events…</div>;
+
+  if (error || !items) return null;
 
   const realItems = items.filter(e => e.start !== undefined);
 
@@ -27,7 +43,7 @@ const Calendar = ({ isError, items, fullScreen, filter, handleSetFilter }) => {
             </option>
           ))}
         </select>
-        <a 
+        <a
           style={{ color: red, marginLeft: "auto" }}
           href="https://calendar.google.com/calendar/embed?src=vv0uj9uhqrl6j6m0pugu90uo6c%40group.calendar.google.com&ctz=America%2FChicago"
         >

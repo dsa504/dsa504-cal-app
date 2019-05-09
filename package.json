@@ -8,9 +8,9 @@
     "date-fns": "1.29.0",
     "lodash": "4.17.11",
     "query-string": "5.x",
-    "react": "16.x",
-    "react-dom": "16.x",
-    "react-flip-move": "3.0.3",
+    "react": "16.8.x",
+    "react-dom": "16.8.x",
+    "react-fetch-hooks": "1.0.3",
     "react-jss": "8.4.0",
     "react-scripts": "1.1.0"
   },
