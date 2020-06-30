@@ -8,7 +8,7 @@ export const calendarId =
 export const baseUrl = "https://www.googleapis.com/calendar/v3/calendars";
 
 const config = {
-  key: "AIzaSyCG8sNlUxlUQb4_o9OGN15JSmeDKURbzR4",
+  key: "AIzaSyCdRWsjXcSzRorIYrysYNyFMGOuEcT2X4E",
   orderBy: "startTime",
   singleEvents: true,
   timeMin,
