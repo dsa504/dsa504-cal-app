@@ -14,7 +14,7 @@
     "react-dom": "16.8.x",
     "react-fetch-hooks": "1.0.3",
     "react-jss": "8.4.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "source-map-explorer": "^1.8.0"
   },
   "devDependencies": {},
